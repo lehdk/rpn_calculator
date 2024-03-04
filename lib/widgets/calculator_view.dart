@@ -35,6 +35,7 @@ class _CalculatorViewState extends State<CalculatorView> {
                   padding: const EdgeInsets.all(12),
                   alignment: Alignment.centerRight,
                   child: Text(
+                    key: const Key("display"),
                     display,
                     style: const TextStyle(fontSize: 42, color: Colors.amber),
                   ),
@@ -47,8 +48,8 @@ class _CalculatorViewState extends State<CalculatorView> {
               children: 
                 InputButton.buttons.map((v) => 
                   SizedBox(
-                    width: screenSize.width / 4,
-                    height: screenSize.width / 4,
+                    width: 100, //screenSize.width / 4,
+                    height: 100, //screenSize.width / 4,
                     child: createButton(v)),
                 ).toList(),
             )
@@ -71,6 +72,7 @@ class _CalculatorViewState extends State<CalculatorView> {
           ),
         ),
         child: TextButton(
+          key: Key("btn_$value"),
           onPressed: () => onButtonPressed(value),
           child: Center(
             child: Text(
