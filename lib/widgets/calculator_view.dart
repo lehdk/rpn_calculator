@@ -74,7 +74,11 @@ class _CalculatorViewState extends State<CalculatorView> {
           child: Center(
             child: Text(
               value,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Colors.white
+                ),
             ),
           ),
         ),
@@ -144,7 +148,7 @@ class _CalculatorViewState extends State<CalculatorView> {
   Color calculateButtonColor(String value) {
     return [InputButton.div, InputButton.mult, InputButton.sub, InputButton.add]
             .contains(value)
-        ? Colors.greenAccent
+        ? Colors.grey
         : Colors.blueGrey;
   }
 
