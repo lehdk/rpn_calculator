@@ -76,8 +76,8 @@ class _CalculatorViewState extends State<CalculatorView> {
             color: Colors.lime
           ),
         ),
-        child: InkWell(
-          onTap: () => onButtonPressed(value),
+        child: TextButton(
+          onPressed: () => onButtonPressed(value),
           child: Center(
             child: Text(
               value,
