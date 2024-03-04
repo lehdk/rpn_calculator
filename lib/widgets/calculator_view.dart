@@ -25,31 +25,25 @@ class _CalculatorViewState extends State<CalculatorView> {
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: Column(
-          children: [
-            // number display
-            Expanded(
-              child: SingleChildScrollView(
-                reverse: true,
-                child: Container(
-                  alignment: Alignment.bottomRight,
-                  padding: const EdgeInsets.all(15),
+      body: Column(
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  alignment: Alignment.centerRight,
                   child: Text(
                     display,
-                    style: const TextStyle(
-                      fontSize: 52,
-                      fontWeight: FontWeight.bold
-                    ),
-                    textAlign: TextAlign.end,
+                    style: const TextStyle(fontSize: 42, color: Colors.amber),
                   ),
-                ),
-              ),
+                )
+              ],
             ),
-
-            // input buttons
-            Wrap(
+          ),
+          Expanded(
+            child: Wrap(
               children: 
                 InputButton.buttons.map((v) => 
                   SizedBox(
@@ -57,9 +51,9 @@ class _CalculatorViewState extends State<CalculatorView> {
                     height: screenSize.width / 4,
                     child: createButton(v)),
                 ).toList(),
-            ),
-          ],
-        ),
+            )
+          )
+        ],
       ),
     );
   }
